@@ -46,7 +46,7 @@ export default PropsComponent;
 
 ```
 `./src/App.jsx`
-```
+```js
 import React, { Component } from 'react';
 import PropsComponent from './PropsComponent';
 import './App.css';
@@ -63,7 +63,14 @@ class App extends Component {
   }
 
 }
-
 export default App;
-
 ```
+
+### 리액트 라우터
+|라우터 컴포넌트 종류|설명|
+-|-
+|BrowswerRouter|HTML5를 지원하는 브라우저의 주소를 감지합니다.|
+|HashRouter|해시 주소(http://localhost#login)를 감지합니다.|
+|MemoryRouter|메모리에 저장된 이전, 이후 주소로 이동시키는 라우터입니다.|
+NativeRouter|리액트 네이티브를 지원하는 라우터입니다.|
+|StaticRouter|브라우저의 주소가 아닌 프로퍼티로 전달된 주소를 사용하는 라우터입니다.|
