@@ -8,6 +8,8 @@ yarn global add create-react-app
 ```shell
 create-react-app <react-app-name>
 ```
+
+### 컴포넌트 단축키
 |키워드|설명|
 -|-
 |RCC|기본리액트 컴포넌트 코드를 생성합니다|
@@ -23,3 +25,45 @@ create-react-app <react-app-name>
 |프로퍼티|상위 컴포넌트에서 하위 컴포넌트로 전달되는 읽기 전용 데이터입니다.|
 |state|컴포넌트의 상태를 저장하고 변경할 수 있는 데이터입니다.|
 |컨텍스트|부모 컴포넌트에서 생성하여 모든 자식 컴포넌트에 전달하는 데이터입니다.|
+
+#### 프로퍼티 활용
+`./src/PropsComponent.jsx`
+```js
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+class PropsComponent extends Component {
+  render() {
+    return <div className="message-container">{this.props.name}</div>;
+  }
+}
+
+PropsComponent.propTypes = {
+  name: PropTypes.string,
+};
+
+export default PropsComponent;
+
+```
+`./src/App.jsx`
+```
+import React, { Component } from 'react';
+import PropsComponent from './PropsComponent';
+import './App.css';
+
+class App extends Component {
+  render() {
+    return (
+      <div className="body">
+        <PropsComponent 
+          name="안녕하세요?"
+        />
+      </div>
+    );
+  }
+
+}
+
+export default App;
+
+```
